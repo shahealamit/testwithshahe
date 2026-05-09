@@ -1,0 +1,184 @@
+/* Clean Scrollbar Hide (Strict but safe) */
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #020617;
+    color: #e2e8f0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Chrome, Safari, and Opera hide scrollbar */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* Smooth Scroll & Clean Setup */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #020617;
+    color: #e2e8f0;
+}
+
+/* --- HERO: SOLAR SYSTEM --- */
+.solar-system { position: relative; width: 100%; height: 350px; display: flex; justify-content: center; align-items: center; }
+.orbit { position: absolute; top: 50%; left: 50%; border: 1px dashed rgba(20, 184, 166, 0.4); border-radius: 50%; transform: translate(-50%, -50%); animation: spin-right linear infinite; box-shadow: 0 0 15px rgba(20, 184, 166, 0.1); }
+.planet-container { position: absolute; top: 50%; left: 50%; width: 44px; height: 44px; margin-top: -22px; margin-left: -22px; }
+.planet-icon { width: 100%; height: 100%; background: rgba(15, 23, 42, 0.9); border: 1px solid #14b8a6; color: #14b8a6; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.2rem; box-shadow: 0 0 15px rgba(20, 184, 166, 0.6); animation: spin-left linear infinite; }
+
+.orbit-1 { width: 160px; height: 160px; animation-duration: 15s; z-index: 3; } .orbit-1 .planet-icon { animation-duration: 15s; }
+.orbit-2 { width: 280px; height: 280px; animation-duration: 25s; z-index: 2; } .orbit-2 .planet-icon { animation-duration: 25s; }
+.orbit-3 { width: 400px; height: 400px; animation-duration: 35s; z-index: 1; } .orbit-3 .planet-icon { animation-duration: 35s; }
+
+@keyframes spin-right { 0% { transform: translate(-50%, -50%) rotate(0deg); } 100% { transform: translate(-50%, -50%) rotate(360deg); } }
+@keyframes spin-left { 0% { transform: rotate(0deg); } 100% { transform: rotate(-360deg); } }
+
+/* --- ABOUT: NEXUS ROTATION + 4-WAY BUBBLES --- */
+.nexus-wrapper {
+    position: relative; 
+    width: 400px; 
+    height: 400px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    max-width: 100vw; 
+    margin: 0 auto;
+    overflow: hidden; /* Prevent child animations from bleeding out */
+}
+
+/* 1. Background Container for Bubbles */
+.nexus-bg-container {
+    position: absolute; width: 380px; height: 380px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(15, 23, 42, 0.9) 30%, rgba(20, 184, 166, 0.05) 100%);
+    border: 1px solid rgba(20, 184, 166, 0.2); box-shadow: 0 0 50px rgba(20, 184, 166, 0.1);
+    overflow: hidden; z-index: 1;
+}
+
+/* 4-Way Bubble Animation */
+.bubble-particle { position: absolute; font-size: 1.2rem; opacity: 0; pointer-events: none; }
+.move-up { animation: float-up 4s linear infinite; }
+.move-down { animation: float-down 4s linear infinite; }
+.move-left { animation: float-left 4s linear infinite; }
+.move-right { animation: float-right 4s linear infinite; }
+
+@keyframes float-up { 0% { top: 100%; opacity: 0; } 50% { opacity: 0.6; } 100% { top: -20px; opacity: 0; } }
+@keyframes float-down { 0% { top: -20px; opacity: 0; } 50% { opacity: 0.6; } 100% { top: 100%; opacity: 0; } }
+@keyframes float-left { 0% { left: 100%; opacity: 0; } 50% { opacity: 0.6; } 100% { left: -20px; opacity: 0; } }
+@keyframes float-right { 0% { left: -20px; opacity: 0; } 50% { opacity: 0.6; } 100% { left: 100%; opacity: 0; } }
+
+.p-bug { color: #ef4444; text-shadow: 0 0 5px rgba(239,68,68,0.5); }
+.p-dev { color: #3b82f6; text-shadow: 0 0 5px rgba(59,130,246,0.5); }
+.p-qa { color: #14b8a6; text-shadow: 0 0 5px rgba(20,184,166,0.5); }
+
+/* 2. Central Core */
+.nexus-core {
+    position: absolute; width: 80px; height: 80px; background: #020617; border: 2px solid #14b8a6; border-radius: 50%;
+    display: flex; justify-content: center; align-items: center; color: #14b8a6; font-size: 2rem; 
+    z-index: 20; box-shadow: 0 0 30px rgba(20, 184, 166, 0.5); animation: core-pulse 2s infinite;
+}
+
+/* 3. The Rotating Orbit Ring */
+.nexus-orbit {
+    position: absolute; top: 50%; left: 50%; width: 280px; height: 280px;
+    margin-top: -140px; margin-left: -140px; border-radius: 50%; border: 1px dashed rgba(255,255,255,0.1);
+    animation: spin-orbit 25s linear infinite; /* THIS ROTATES THE NODES */
+    z-index: 10;
+}
+
+/* Connecting Lines (Spokes) */
+.orbit-spoke {
+    position: absolute; top: 50%; left: 50%; width: 50%; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(20, 184, 166, 0.6));
+    transform-origin: 0 0;
+}
+
+/* Tech Nodes Container */
+.node-holder {
+    position: absolute; top: 50%; left: 50%; width: 50px; height: 50px;
+    margin-top: -25px; margin-left: -25px;
+}
+
+/* Tech Node Icon (Counter-Rotates to stay upright) */
+.tech-node {
+    width: 100%; height: 100%; background: #0f172a; border-radius: 50%;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    font-size: 1.2rem; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    animation: spin-orbit-reverse 25s linear infinite; /* COUNTER ROTATION */
+}
+
+.node-bug { color: #ef4444; border-color: #ef4444; }
+.node-test { color: #14b8a6; border-color: #14b8a6; }
+.node-devops { color: #3b82f6; border-color: #3b82f6; }
+.node-lang { color: #a855f7; border-color: #a855f7; }
+.node-tech { color: #f59e0b; border-color: #f59e0b; }
+
+@keyframes spin-orbit { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes spin-orbit-reverse { 0% { transform: rotate(0deg); } 100% { transform: rotate(-360deg); } }
+@keyframes core-pulse { 0%, 100% { scale: 1; box-shadow: 0 0 20px rgba(20, 184, 166, 0.5); } 50% { scale: 1.1; box-shadow: 0 0 40px rgba(20, 184, 166, 0.8); } }
+
+/* Typing Cursor */
+.typed-cursor { font-size: 1em; animation: blink 0.7s infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+@media (max-width: 768px) { 
+    .solar-system { 
+        transform: scale(0.75); 
+        height: 320px; 
+        width: 100%;
+        margin: 0 auto;
+    } 
+    .nexus-wrapper { 
+        transform: scale(0.8); 
+        height: 350px; 
+        margin: 0 auto; 
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    body, html {
+        overflow-x: hidden;
+    }
+}
+
+/* Mobile Menu State */
+#mobile-menu.active {
+    max-height: 500px;
+    opacity: 1;
+}
+#mobile-menu.active #mobile-menu-content {
+    opacity: 1;
+}
+/* Custom Animations for CTA */
+.fa-spin-slow {
+    animation: spin 8s linear infinite;
+}
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
