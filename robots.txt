@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://testwithshahe.vercel.app/sitemap.xml
