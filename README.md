@@ -1,12 +1,10 @@
-# TestWithShahe
+# 🚀 TestWithShahe
 
-Personal portfolio website of Md Shahe Alam.
+## QA Automation Engineer Portfolio Website
 
-## About Me
+Personal portfolio website of **Md Shahe Alam**, a QA Automation Engineer with almost 2 years of experience in Manual and Automation Testing.
 
-QA Automation Engineer with almost 2 years of experience in Manual and Automation Testing.
-
-## Skills
+### 🔹 Core Skills
 
 - Selenium WebDriver
 - Java
@@ -15,41 +13,37 @@ QA Automation Engineer with almost 2 years of experience in Manual and Automatio
 - JIRA
 - Maven
 - Git & GitHub
+- Manual Testing
+- Automation Testing
 
-## Testing Expertise
+### 🔹 Testing Expertise
 
 - Functional Testing
 - Regression Testing
 - Smoke Testing
 - Sanity Testing
-- Cross Browser Testing
+- Cross-Browser Testing
 - SQL Validation
+- Defect Tracking & Reporting
+- End-to-End Testing
 
-## Projects
+### 🔹 Experience
 
-### E-Commerce Application Testing
-- Login
-- Registration
-- Product Search
-- Cart Operations
-- Checkout
-- Payment Validation
+**Quality Assurance Engineer**  
+**Redn Technologies** | Jul 2024 – Present
 
-### Government Portal Testing
-- Booking
-- Payment
-- Cancellation
-- Refund
-- QR Ticket Generation
+- Automated regression test cases using Selenium WebDriver, Java, and TestNG.
+- Performed Functional, Regression, Smoke, and Cross-Browser Testing.
+- Logged and tracked defects using JIRA.
+- Validated application workflows and backend data using SQL.
+- Collaborated with developers in Agile environments.
 
-### CRM Testing
-- Dashboard
-- Leads
-- Clients
-- Projects
-- Accounts
-- HRMS
+### 🌐 Live Portfolio
 
-## Live Website
+**Website:** https://testwithshahe.vercel.app
 
-https://testwithshahe.vercel.app
+### 📧 Contact
+
+- Email: shahealam.it@gmail.com
+- LinkedIn: https://linkedin.com/in/md-shahe-alam-63a439315
+- GitHub: https://github.com/shahealamit
